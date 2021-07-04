@@ -32,7 +32,6 @@ mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws
 source /opt/ros/melodic/setup.bash
 catkin init
-catkin clean -y
 catkin build
 sh -c "echo \"source ~/catkin_ws/devel/setup.bash\" >> ~/.bashrc"
 source ~/.bashrc
