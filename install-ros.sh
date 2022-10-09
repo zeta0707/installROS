@@ -2,6 +2,10 @@
 
 # Reference sites
 # https://www.stereolabs.com/blog/ros-and-nvidia-jetson-nano/
+echo "[Update the package]"
+sudo apt update
+echo "[install curl]"
+sudo apt install -y curl
 
 echo "[Add the ROS repository]"
 if [ ! -e /etc/apt/sources.list.d/ros-latest.list ]; then
@@ -12,10 +16,10 @@ curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo ap
 sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 
 echo "[Update the package]"
-sudo apt-get update
+sudo apt update
 
 echo "[Installing ROS and ROS Packages]"
-sudo apt-get install -y ros-melodic-desktop
+sudo apt install -y ros-melodic-desktop
 
 # need for check
 sudo apt install python-rosdep
@@ -27,7 +31,7 @@ echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 
 echo "[Making the catkin workspace and testing the catkin build]"
-sudo apt-get install -y cmake python-rosinstall python-catkin-tools
+sudo apt install -y cmake python-rosinstall python-catkin-tools
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws
 source /opt/ros/melodic/setup.bash
